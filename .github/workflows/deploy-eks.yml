@@ -25,6 +25,7 @@ jobs:
       - name: Test Start application
         run: |
           echo `pwd`
+          ll
           java -jar github-cicd-eks.jar &
       - name: Test Ping Health
         run: curl http://localhost:8080/actuator/health
