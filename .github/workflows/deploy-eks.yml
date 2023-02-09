@@ -22,5 +22,10 @@ jobs:
       - name: Build with Maven
         run: |
           mvn package
-      - name: Ping Health
+      - name: Test Start application
+        run: |
+          find / *.jar | grep eks
+          find / *.jar | grep app
+          java -jar github-cicd-eks.jar
+      - name: Test Ping Health
         run: curl http://localhost:8080/actuator/health
