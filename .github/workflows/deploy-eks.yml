@@ -22,4 +22,5 @@ jobs:
       - name: Build with Maven
         run: |
           mvn package
-      - run: curl http://localhost:8080/actuator/health
+      - name: Ping Health
+        run: curl http://localhost:8080/actuator/health
